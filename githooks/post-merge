@@ -1,0 +1,23 @@
+#/usr/bin/env bash
+
+# git hook to run commands after `git merge` or `git pull`
+
+# Check for changed files
+changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+check_run() {
+    echo "$changed_files" | grep --quiet "$1" && eval "$2"
+}
+
+# `npm install` and `npm prune` if the `package.json` file gets changed
+echo "--- Updating Node packages..."
+check_run package.json "(npm install && npm prune)"
+echo "\xe2\x9c\x94 Node packages updated"
+
+# `bower install` and `bower prune` if the `bower.json` file gets changed
+echo "--- Updating Bower components..."
+check_run bower.json "(bower install --allow-root && bower prune --allow-root)"
+echo "\xe2\x9c\x94 Bower components updated"
+
+# Run the build process
+echo "--- Running the default build process..."
+(grunt)

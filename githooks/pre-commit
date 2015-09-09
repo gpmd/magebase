@@ -1,0 +1,8 @@
+#/usr/bin/env bash
+
+# git hook to run commands before `git commit`
+
+# Run the build process
+echo "--- Verifying frontend build passes before we commit..."
+echo "--- If the build fails fix the issue and try committing again"
+(grunt)
