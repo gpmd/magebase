@@ -3,7 +3,9 @@
     <default>
         <reference name="root">
             <reference name="head">
+                <!-- Switch modernizr to our own version for more flexibility -->
                 <action method="removeItem"><type>skin_js</type><name>js/lib/modernizr.custom.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/vendor/modernizr.min.js</name></action>
             </reference>
         </reference>
     </default>
