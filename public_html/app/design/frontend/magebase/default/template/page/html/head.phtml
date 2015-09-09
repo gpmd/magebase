@@ -32,9 +32,6 @@
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 
-<script src="<?php echo $this->getSkinUrl('js/vendor/modernizr.min.js'); ?>"></script>
-<script src="<?php echo $this->getSkinUrl('js/vendor/picturefill.min.js'); ?>" async></script>
-
 <!--[if lt IE 7]>
 <script type="text/javascript">
     //<![CDATA[
@@ -48,6 +45,7 @@
 <script>
     Modernizr.load({
         load: [
+            '<?php echo $this->getSkinUrl('js/vendor/picturefill.min.js'); ?>',
             '<?php echo $this->getSkinUrl('js/modules/modules-combined.js'); ?>',
             '<?php echo $this->getSkinUrl('js/init.js'); ?>'
         ]

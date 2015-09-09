@@ -43,6 +43,8 @@ project: {
 
 You may also want to change the project name in `package.json` and `bower.json`.
 
+**4. Remove, or edit the Magebase `.gitignore` file (it contains rules for ignoring most Magento files)**
+
 ## Setup script
 
 Magebase comes packaged with a couple of scripts:
