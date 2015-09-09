@@ -12,9 +12,11 @@ It inherits all the styles and functionality of the Magento RWD theme. Please re
 git clone https://github.com/gpmd/magebase.git .
 ```
 
-Then merge the files/folders into your own Magento project.
+## Prep the directories
 
-**Note:** Magebase assumes the Git root of your project is one level down from your web root (usually `public_html`). For example:
+**1. Merge (manually or rsync) the files/folders into your own Magento project.**
+
+Magebase assumes the Git root of your project is one level down from your web root (often called `public_html`). For example:
 
 ```
 my-project/ # Git root
@@ -22,7 +24,26 @@ my-project/ # Git root
   `- # All the Magebase things...
 ```
 
-## First time setup
+**2. Rename the `magebase` directories to the name of your own project.**
+
+The directories to rename are:
+
+```
+public_html/app/design/frontend/magebase
+public_html/skin/frontend/magebase
+```
+
+**3. Update the project name variable found in `Gruntfile.js`**
+
+```javascript
+project: {
+  name: 'magebase',
+  // etc...
+```
+
+You may also want to change the project name in `package.json` and `bower.json`.
+
+## Setup script
 
 Magebase comes packaged with a couple of scripts:
 
